@@ -1,0 +1,30 @@
+{
+  "name": "insonia-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ArseniumGX/insonia-api.git",
+  "author": "José Pereira Macedo <arseniumgx@gmail.com> (https://arseniumgx.herokuapp.com/)",
+  "license": "MIT",
+  "keywords": ["typescript", "dotenv", "mongodb", "mongoose", "express", "heroku", "api-rest"],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "start": "node dist/server.js",
+    "dev": "NODE_ENV=Development tsnd --clear --transpile-only src/server.ts",
+    "publish": "git push origin main"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.7.13",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.2"
+  }
+}
