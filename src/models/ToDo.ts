@@ -1,20 +1,13 @@
+import moment from 'moment'
 import db from '../database'
 
 const todoSchema = new db.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true},
-    priority: { 
-        low: { type: Boolean, default: false},
-        mid: { type: Boolean, default: false },
-        high: { type: Boolean, default: false }
-    },
-    status: {
-        pending: { type: Boolean, default: false},
-        making: { type: Boolean, default: false},
-        done: { type: Boolean, default: false}
-    },
-    deadline: { type: Number, default: 0 },
-    createdAt: { type: Date, default: Date.now}
+    priority: { type: String, default: '' },
+    status: { type: String, default: '' },
+    deadline: { type: Date, default: 0 },
+    createdAt: { type: Date, default: moment().format('YYYY-MM-DD')}
 })
 
 const ToDo = db.model('todo-list', todoSchema)

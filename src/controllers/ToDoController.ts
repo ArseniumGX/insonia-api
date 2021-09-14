@@ -5,13 +5,13 @@ class ToDoController{
     showAll = async(req: Request, res: Response) => {
         const query = await ToDo.find()
         return query.length < 1 ? res.status(204).json()
-                                : res.status(200).json({message: "Tarefas encontradas", count: query.length, data: query})
+                                : res.status(200).json({message: "Task find!", count: query.length, data: query})
     }
 
     showOne = async(req: Request, res: Response) => {
         const { id } = req.params
         const query = await ToDo.findById(id)
-        return query ? res.status(200).json({message: "ok!", data: query})
+        return query ? res.status(200).json({message: "Ok!", data: query})
                      : res.status(204).json()
     }
 
@@ -20,13 +20,13 @@ class ToDoController{
 
         const check = await ToDo.findOne({title: params.title})
         if(check)
-            return res.status(409).json({message: "Tarefa já cadastrada!", data: check})
+            return res.status(409).json({message: "Task already registered!", data: check})
 
         const novo = new ToDo({...params})
         const query = await novo.save().then(res => res).catch(err => err)
         
-        return query.errors ? res.status(406).json({message: "Ocorreu algum erro, é necessário passar title e description", response: query.erros})
-                            : res.status(201).json({message: "Tarefa criada!", response: query})
+        return query.errors ? res.status(406).json({message: "Error!", response: query.erros})
+                            : res.status(201).json({message: "Task created!", response: query})
     }
 
     update = async(req: Request, res: Response) => {
@@ -35,7 +35,7 @@ class ToDoController{
         
         const query = await ToDo.findByIdAndUpdate(id, { ...params }, { new: true })
         
-        return query ? res.status(202).json({message: "Tarefa atualizada!", data: query})
+        return query ? res.status(202).json({message: "Task updated!", data: query})
                      : res.status(204).json()
     }
 
@@ -43,7 +43,7 @@ class ToDoController{
         const { id } = req.params
         const query = await ToDo.findByIdAndDelete(id)
         
-        return query ? res.status(202).json({message: "Tarefa deletada com sucesso!", response: query})
+        return query ? res.status(202).json({message: "Task's deleted!", response: query})
                      : res.status(204).json()
     }
 }

@@ -10,8 +10,9 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-    origin: "",
-    optionsSuccessStatus: 200
+    origin: 'https://insonia.herokuapp.com/',
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
 }))
 app.use(routes)
 
