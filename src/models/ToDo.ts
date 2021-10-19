@@ -10,6 +10,6 @@ const todoSchema = new db.Schema({
     createdAt: { type: Date, default: moment().format('YYYY-MM-DD')}
 })
 
-const ToDo = db.model('todo-list', todoSchema)
+const ToDo = db.model('todo-lists', todoSchema)
 
 export default ToDo
