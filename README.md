@@ -36,3 +36,7 @@ Modelo de dados de estrutura de dados para persistência de dados no banco de da
 
 ##
 Visite o projeto final termina clicando [aqui](https://insonia.herokuapp.com/). Lá você encontrará o resultado final do projeto com todas as fases implementadas. Acesse também apenas o [API](https://d7ffce5ee98e14b600a806eb38f389.herokuapp.com/) do projeto para testes em um API Client.
+
+---
+
+Licensed by [MIT Lincense](./LICENSE).
