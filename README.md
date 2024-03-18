@@ -1,7 +1,7 @@
 # Projeto Insonia
 ## API
 
-Projeto desenvolvido como avaliação final do curso de formação de programadores fullstack da Blue EdTech. O presente projeto consistem em uma ToDo List para cadastrar tarefas diária e pesistir estes em banco de dados MongoDB
+O presente projeto consistem em uma ToDo List para cadastrar tarefas diária e pesistir estes em banco de dados MongoDB
 
 Este projeto foi dividido em 4 fases:
 
